@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("firefly-algo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+43fefba2a2e97a44fdaa9b46d3e73e017ecada63")]
 [assembly: System.Reflection.AssemblyProductAttribute("firefly-algo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("firefly-algo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -12,3 +12,4 @@
 /home/dust/c#/firefly-algo/obj/Debug/net8.0/firefly-algo.pdb
 /home/dust/c#/firefly-algo/obj/Debug/net8.0/firefly-algo.genruntimeconfig.cache
 /home/dust/c#/firefly-algo/obj/Debug/net8.0/ref/firefly-algo.dll
+/home/dust/c#/firefly-algo/obj/Debug/net8.0/firefly-algo.sourcelink.json

@@ -2,23 +2,26 @@ namespace firefly_algo
 {
     public class Firefly
     {
-        private double xPos;
-        private double yPos;
-        static Random random = new Random();
+        private double[] position;
 
-        public Firefly(double min, double max) {
-            xPos = GeneratePosition(min, max);
-            yPos = GeneratePosition(min, max); 
+        public Firefly(int dimensionality, double[] boundaries) {
+            position = new double[dimensionality];
+
+            for (int i = 0; i < dimensionality; ++i) {
+                position[i] = Utils.GenerateRandomDouble(boundaries[0], boundaries[1]);
+            }
         }
 
-        private static double GeneratePosition(double min, double max) {
-            double res = random.NextDouble() * (max - min) + min;
-
-            return res;
+        public double[] GetPosition() {
+            return position;
         }
 
-        public string GetPos() {
-            return $"({xPos}; {yPos})";
+        public double GetBrightness() {
+            return Utils.Evaluate(position);
+        }
+
+        public void SetPosition(int dimension, double value) {
+            position[dimension] = value;
         }
     }
 }

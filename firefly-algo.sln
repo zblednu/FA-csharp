@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "firefly-algo", "firefly-algo.csproj", "{F99E3B41-7FEE-445A-9919-175D8E6F9AFB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F99E3B41-7FEE-445A-9919-175D8E6F9AFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F99E3B41-7FEE-445A-9919-175D8E6F9AFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F99E3B41-7FEE-445A-9919-175D8E6F9AFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F99E3B41-7FEE-445A-9919-175D8E6F9AFB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D076D9A8-26CD-4037-BF20-C2C40243D792}
+	EndGlobalSection
+EndGlobal

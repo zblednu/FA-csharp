@@ -4,7 +4,7 @@ namespace firefly_algo
     {
         private List<Firefly> population;
         private readonly int size;
-        private readonly double dimensionality;
+        private readonly int dimensionality;
         private readonly double searchSpaceMin;
         private readonly double searchSpaceMax;
         private readonly double attractiveness;
@@ -38,7 +38,7 @@ namespace firefly_algo
                             double euclideanDistance = Utils.CalculateEuclideanDistance(firefly1.GetPositionVector(), firefly2.GetPositionVector());
 
                             double[] newPosition = Utils.CalculateNewPositionVector(firefly1, firefly2, euclideanDistance, attractiveness, absorption, randomizationFactor); 
-                                firefly1.SetPositionVector(newPosition);
+                            firefly1.SetPositionVector(newPosition);
                         }
                     }
                 }

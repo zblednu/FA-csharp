@@ -4,13 +4,13 @@ namespace firefly_algo
     {
         static Random random = new Random();
 
-        public static double Evaluate(double[] positionVector) {
+        public static double FitnessFunction(double[] positionVector) {
             double res = 0;
             foreach (double coord in positionVector) {
                 res += Math.Pow(coord, 2);
             }
 
-            return 1/res;
+            return res;
         }
 
         public static double CalculateEuclideanDistance(double[] vector1, double[] vector2) {

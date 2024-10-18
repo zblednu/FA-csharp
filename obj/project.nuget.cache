@@ -1,10 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "Q5+zTKVLdPl2Rj7oWlB/X9ZdGjmNBU0IDwYF28kupAQzTqRx+I/vigXi+FQ5JbISHvBo/+9BWicDMzvJk/H1Ow==",
+  "dgSpecHash": "M0tfRMJ28Iv8CttfiredXye+fux1IhdQJeWsCdXK3UZd7bj0r5L/REX7Vz1Kdwj0vS7jPj2D4L1wDaTXr+1sng==",
   "success": true,
   "projectFilePath": "/home/dust/c#/firefly-algo/firefly-algo.csproj",
   "expectedPackageFiles": [
-    "/home/dust/.nuget/packages/oxyplot.core/2.2.0/oxyplot.core.2.2.0.nupkg.sha512"
+    "/home/dust/.nuget/packages/scottplot/5.0.40/scottplot.5.0.40.nupkg.sha512",
+    "/home/dust/.nuget/packages/skiasharp/2.88.8/skiasharp.2.88.8.nupkg.sha512",
+    "/home/dust/.nuget/packages/skiasharp.nativeassets.linux.nodependencies/2.88.8/skiasharp.nativeassets.linux.nodependencies.2.88.8.nupkg.sha512",
+    "/home/dust/.nuget/packages/skiasharp.nativeassets.macos/2.88.8/skiasharp.nativeassets.macos.2.88.8.nupkg.sha512",
+    "/home/dust/.nuget/packages/skiasharp.nativeassets.win32/2.88.8/skiasharp.nativeassets.win32.2.88.8.nupkg.sha512"
   ],
   "logs": []
 }

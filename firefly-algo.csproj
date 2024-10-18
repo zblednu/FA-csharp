@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="OxyPlot.Core" Version="2.2.0" />
+    <PackageReference Include="ScottPlot" Version="5.0.40" />
   </ItemGroup>
 
 </Project>

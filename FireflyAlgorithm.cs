@@ -28,6 +28,9 @@ namespace firefly_algo
         }
 
         public void SimulateMovement(int maxIterations) {
+            int[] dataX = new int[maxIterations];
+            double[] dataY = new double[maxIterations];
+
             for (int i = 0; i < maxIterations; ++i) {
                 foreach (Firefly firefly1 in population) {
                     foreach (Firefly firefly2 in population) {
@@ -42,7 +45,18 @@ namespace firefly_algo
                         }
                     }
                 }
+                dataX[i] = i;
+                dataY[i] = GetBestFit().CalculateBrightness();
             }
+
+            var plt = new ScottPlot.Plot();
+            plt.Add.Scatter(dataX, dataY);
+            plt.Axes.AutoScale();
+            plt.Title("Best Fitness Over Iterations");
+            plt.XLabel("Iteration");
+            plt.YLabel("Best Fitness");
+            plt.SavePng("plots/fitness_over_iterations.png", 1000, 1000);
+
         }
 
         public Firefly GetBestFit() {

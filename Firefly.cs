@@ -2,26 +2,40 @@ namespace firefly_algo
 {
     public class Firefly
     {
-        private double[] position;
+        private double[] positionVector;
+        private readonly double searchSpaceMin;
+        private readonly double searchSpaceMax;
 
-        public Firefly(int dimensionality, double[] boundaries) {
-            position = new double[dimensionality];
+        public Firefly(int dimensionality, double searchSpaceMin, double searchSpaceMax) {
+            positionVector = new double[dimensionality];
+            this.searchSpaceMin = searchSpaceMin;
+            this.searchSpaceMax = searchSpaceMax;
 
-            for (int i = 0; i < dimensionality; ++i) {
-                position[i] = Utils.GenerateRandomDouble(boundaries[0], boundaries[1]);
+            for (int dimension = 0; dimension < dimensionality; ++dimension) {
+                positionVector[dimension] = Utils.GenerateRandomDouble(searchSpaceMin, searchSpaceMax);
             }
         }
 
-        public double[] GetPosition() {
-            return position;
+        public double[] GetPositionVector() {
+            return positionVector;
         }
 
-        public double GetBrightness() {
-            return Utils.Evaluate(position);
+        public double CalculateBrightness() {
+            return Utils.Evaluate(positionVector);
         }
 
-        public void SetPosition(int dimension, double value) {
-            position[dimension] = value;
+        public void SetPositionVector(double[] vector) {
+            for (int dimension = 0; dimension < positionVector.Length; ++dimension) {
+                if (vector[dimension] < searchSpaceMin) {
+                    positionVector[dimension] = searchSpaceMin;
+                }
+                else if (vector[dimension] > searchSpaceMax) {
+                    positionVector[dimension] = searchSpaceMax;
+                }
+                else {
+                    positionVector[dimension] = vector[dimension];
+                }
+            }
         }
     }
 }

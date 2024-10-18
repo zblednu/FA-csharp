@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "F1jon4hqlIKl3fl5GX3Gwx7Yz6akVE4msHAR0A6aVh5kGWbCDAdsDauNlZrBxrKIRdYvMJNzmVNXfrbm4+h64w==",
+  "dgSpecHash": "Q5+zTKVLdPl2Rj7oWlB/X9ZdGjmNBU0IDwYF28kupAQzTqRx+I/vigXi+FQ5JbISHvBo/+9BWicDMzvJk/H1Ow==",
   "success": true,
   "projectFilePath": "/home/dust/c#/firefly-algo/firefly-algo.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/dust/.nuget/packages/oxyplot.core/2.2.0/oxyplot.core.2.2.0.nupkg.sha512"
+  ],
   "logs": []
 }

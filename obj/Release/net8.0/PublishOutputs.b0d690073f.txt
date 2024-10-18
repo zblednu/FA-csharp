@@ -1,0 +1,5 @@
+/home/dust/c#/firefly-algo/bin/Release/net8.0/publish/firefly-algo
+/home/dust/c#/firefly-algo/bin/Release/net8.0/publish/firefly-algo.dll
+/home/dust/c#/firefly-algo/bin/Release/net8.0/publish/firefly-algo.deps.json
+/home/dust/c#/firefly-algo/bin/Release/net8.0/publish/firefly-algo.runtimeconfig.json
+/home/dust/c#/firefly-algo/bin/Release/net8.0/publish/firefly-algo.pdb

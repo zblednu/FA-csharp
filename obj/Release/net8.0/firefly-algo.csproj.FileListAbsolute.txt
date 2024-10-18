@@ -1,0 +1,15 @@
+/home/dust/c#/firefly-algo/bin/Release/net8.0/firefly-algo
+/home/dust/c#/firefly-algo/bin/Release/net8.0/firefly-algo.deps.json
+/home/dust/c#/firefly-algo/bin/Release/net8.0/firefly-algo.runtimeconfig.json
+/home/dust/c#/firefly-algo/bin/Release/net8.0/firefly-algo.dll
+/home/dust/c#/firefly-algo/bin/Release/net8.0/firefly-algo.pdb
+/home/dust/c#/firefly-algo/obj/Release/net8.0/firefly-algo.GeneratedMSBuildEditorConfig.editorconfig
+/home/dust/c#/firefly-algo/obj/Release/net8.0/firefly-algo.AssemblyInfoInputs.cache
+/home/dust/c#/firefly-algo/obj/Release/net8.0/firefly-algo.AssemblyInfo.cs
+/home/dust/c#/firefly-algo/obj/Release/net8.0/firefly-algo.csproj.CoreCompileInputs.cache
+/home/dust/c#/firefly-algo/obj/Release/net8.0/firefly-algo.sourcelink.json
+/home/dust/c#/firefly-algo/obj/Release/net8.0/firefly-algo.dll
+/home/dust/c#/firefly-algo/obj/Release/net8.0/refint/firefly-algo.dll
+/home/dust/c#/firefly-algo/obj/Release/net8.0/firefly-algo.pdb
+/home/dust/c#/firefly-algo/obj/Release/net8.0/firefly-algo.genruntimeconfig.cache
+/home/dust/c#/firefly-algo/obj/Release/net8.0/ref/firefly-algo.dll

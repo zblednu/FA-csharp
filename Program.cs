@@ -9,17 +9,23 @@
             double absorption = 1;
             double randomizationFactor = 0.2;
 
-            double spaceUpperLimit = 2;
-            double spaceLowerLimit = -2;
-            double[] boundaries = {spaceLowerLimit, spaceUpperLimit};
+            double searchSpaceMin = -40;
+            double searchSpaceMax = 4.3;
 
-            var algorithm = new FireflyAlgorithm(populationSize, dimensionality, boundaries, attractiveness, absorption, randomizationFactor);
-            algorithm.SimulateMovement(maxIterations);
-
+            var algorithm = new FireflyAlgorithm(populationSize, dimensionality, searchSpaceMin, searchSpaceMax, attractiveness, absorption, randomizationFactor);
             Firefly bestfit = algorithm.GetBestFit();
-            foreach (double pos in bestfit.GetPosition()) {
+
+            algorithm.SimulateMovement(maxIterations);
+            Firefly afterBestfit = algorithm.GetBestFit();
+
+            foreach (double pos in bestfit.GetPositionVector()) {
                 System.Console.WriteLine(pos);
             }
+            foreach (double pos in afterBestfit.GetPositionVector()) {
+                System.Console.WriteLine(pos);
+            }
+
+            System.Console.WriteLine(bestfit == afterBestfit);
         }
     }
 }

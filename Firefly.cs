@@ -21,7 +21,7 @@ namespace firefly_algo
         }
 
         public double CalculateBrightness() {
-            return 1.0 / Utils.FitnessFunction(positionVector);
+            return Utils.FitnessFunction(positionVector);
         }
 
         public void SetPositionVector(double[] vector) {

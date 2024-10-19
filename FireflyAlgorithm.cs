@@ -28,19 +28,18 @@ namespace firefly_algo
         }
 
         public void SimulateMovement(int maxIterations) {
-            for (int i = 0; i < maxIterations; ++i) {
+            for (int i = 0; i < maxIterations && GetBestFit().CalculateBrightness() > 1e-6; ++i) {
+                MakeSnapshot($"plots/iteration0{i}.png");
                 foreach (Firefly firefly1 in population) {
                     foreach (Firefly firefly2 in population) {
                         if (firefly1 == firefly2) {
                             continue;
                         }
-                        else if (firefly2.CalculateBrightness() > firefly1.CalculateBrightness()) {
-
+                        else if (firefly2.CalculateBrightness() < firefly1.CalculateBrightness()) {
                             Utils.UpdateFireflyPosition(firefly1, firefly2, attractiveness, absorption, randomizationFactor); 
                         }
                     }
                 }
-                MakeSnapshot($"plots/iteration{i}.png");
             }
         }
 
@@ -57,10 +56,11 @@ namespace firefly_algo
 
         public void MakeSnapshot(string path) {
             var plt = new ScottPlot.Plot();
+            plt.Axes.SetLimits(-10, 150, -10, 100);
             plt.Axes.AutoScale();
             plt.Add.Circle(
-                xCenter: searchSpaceMin + (searchSpaceMax - searchSpaceMin)/2,
-                yCenter: searchSpaceMin + (searchSpaceMax - searchSpaceMin)/2,
+                xCenter: 0,
+                yCenter: 0,
                 radius: (searchSpaceMax - searchSpaceMin) / 2);
 
             double center = searchSpaceMin + (searchSpaceMax - searchSpaceMin)/2;

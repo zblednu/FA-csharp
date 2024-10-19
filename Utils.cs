@@ -19,7 +19,7 @@ namespace firefly_algo
                 dist += Math.Pow(vector1[dimension] - vector2[dimension], 2);
             }
 
-            return Math.Sqrt(dist);
+            return dist;
         } 
 
         public static void UpdateFireflyPosition(Firefly fireflyDimmer, Firefly fireflyBrighter, double baseAttractiveness, double absorption, double randomizationFactor) {
@@ -30,12 +30,11 @@ namespace firefly_algo
 
             double euclideanDistance = Utils.CalculateEuclideanDistance(fireflyDimmer.GetPositionVector(), fireflyBrighter.GetPositionVector());
             double attractiveness = baseAttractiveness * Math.Exp(-absorption * Math.Pow(euclideanDistance, 2));
-            double randComponent = randomizationFactor * GenerateRandomDouble(-0.5, 0.5);
 
             for (int dimension = 0; dimension < dimensionality; ++dimension) {
                 tmp[dimension] =    dimmerVector[dimension] +
                                     attractiveness * (brighterVector[dimension] - dimmerVector[dimension]) +
-                                    randComponent;
+                                    randomizationFactor * GenerateRandomDouble(-0.5, 0.5);
             }
 
             fireflyDimmer.SetPositionVector(tmp);

@@ -28,9 +28,6 @@ namespace firefly_algo
         }
 
         public void SimulateMovement(int maxIterations) {
-            int[] dataX = new int[maxIterations];
-            double[] dataY = new double[maxIterations];
-
             for (int i = 0; i < maxIterations; ++i) {
                 foreach (Firefly firefly1 in population) {
                     foreach (Firefly firefly2 in population) {
@@ -38,25 +35,13 @@ namespace firefly_algo
                             continue;
                         }
                         else if (firefly2.CalculateBrightness() > firefly1.CalculateBrightness()) {
-                            double euclideanDistance = Utils.CalculateEuclideanDistance(firefly1.GetPositionVector(), firefly2.GetPositionVector());
 
-                            double[] newPosition = Utils.CalculateNewPositionVector(firefly1, firefly2, euclideanDistance, attractiveness, absorption, randomizationFactor); 
-                            firefly1.SetPositionVector(newPosition);
+                            Utils.UpdateFireflyPosition(firefly1, firefly2, attractiveness, absorption, randomizationFactor); 
                         }
                     }
                 }
-                dataX[i] = i;
-                dataY[i] = GetBestFit().CalculateBrightness();
+                MakeSnapshot($"plots/iteration{i}.png");
             }
-
-            var plt = new ScottPlot.Plot();
-            plt.Add.Scatter(dataX, dataY);
-            plt.Axes.AutoScale();
-            plt.Title("Best Fitness Over Iterations");
-            plt.XLabel("Iteration");
-            plt.YLabel("Best Fitness");
-            plt.SavePng("plots/fitness_over_iterations.png", 1000, 1000);
-
         }
 
         public Firefly GetBestFit() {
@@ -68,6 +53,36 @@ namespace firefly_algo
             }
 
             return bestFit;
+        }
+
+        public void MakeSnapshot(string path) {
+            var plt = new ScottPlot.Plot();
+            plt.Axes.AutoScale();
+            plt.Add.Circle(
+                xCenter: searchSpaceMin + (searchSpaceMax - searchSpaceMin)/2,
+                yCenter: searchSpaceMin + (searchSpaceMax - searchSpaceMin)/2,
+                radius: (searchSpaceMax - searchSpaceMin) / 2);
+
+            double center = searchSpaceMin + (searchSpaceMax - searchSpaceMin)/2;
+            var centerPoint = plt.Add.ScatterPoints(new double[] {0}, new double[] {0});
+            centerPoint.Color = ScottPlot.Colors.Black;
+            centerPoint.MarkerSize = 10;
+
+            foreach (Firefly firefly in population) {
+                double posX = firefly.GetPositionVector()[0];
+                double posY = firefly.GetPositionVector()[1];
+                var point = plt.Add.ScatterPoints(new double[] {posX}, new double[] {posY});
+                point.Color = ScottPlot.Colors.Green;
+            }
+            var bestFit = plt.Add.Scatter(new double[] {GetBestFit().GetPositionVector()[0]}, new double[] {GetBestFit().GetPositionVector()[1]});
+            bestFit.Color = ScottPlot.Colors.Red;
+
+            plt.Title("Best Fitness Over Iterations");
+            plt.XLabel("X");
+            plt.YLabel("Y");
+            plt.Axes.SquareUnits();
+
+            plt.SavePng(path, 400, 300);
         }
     }
 }

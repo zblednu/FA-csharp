@@ -17,10 +17,10 @@ namespace firefly_algo {
             double searchSpaceMax = 5;
 
 
-            double[] parametervalues = [0.1, 1, 5];
+            double[] parametervalues = [0.1, 0.5, 1];
             for (int experimentNumber = 0; experimentNumber < 3; experimentNumber++) {
                 int[] results = new int[numberOfRuns];
-                absorption = parametervalues[experimentNumber];
+                attractiveness = parametervalues[experimentNumber];
                 for (int i = 0; i < numberOfRuns; ++i) {
                     var algorithm = new FireflyAlgorithm(populationSize, dimensionality, searchSpaceMin, searchSpaceMax, attractiveness, absorption, randomizationFactor, epsilon);
                     results[i] = algorithm.SimulateMovement(maxIterations);
